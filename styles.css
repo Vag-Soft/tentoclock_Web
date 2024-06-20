@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    background-color: #515863;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+input[type="text"] {
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.contact-button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.language-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "sect1 sect2"
+        "arti arti"
+        "metr metr";
+
+}
+
+main > *{
+    border: 4px solid black;
+}
+
+.test1{
+    grid-area: sect1;
+}
+
+.test2{
+    grid-area: sect2;
+}
+
+article{
+    grid-area: arti;
+}
+
+.metrites{
+    grid-area: metr;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.counter {
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ff9800;
+    text-decoration: none;
+    margin: 0 10px;
+}
