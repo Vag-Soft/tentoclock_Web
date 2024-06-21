@@ -11,7 +11,6 @@ body {
     font-style: normal;
     font-variation-settings:
         "slnt" 0;
-    background-color: #E0E0E0;
 }
 
 
@@ -73,7 +72,7 @@ input[type="text"] {
 }
 
 footer {
-    background-color: #333;
+    background-color: #515863;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -90,19 +89,6 @@ footer a {
     height: auto;
 }
 
-#genikoiIMG {
-    grid-area: gen;
-    margin: 20px;
-    background-color: white;
-}
-
-#eidikoiIMG {
-    grid-area: eid;
-    margin: 20px;
-    background-color: white;
-    width: 95%;
-}
-
 .halfWidthPhotos {
     width: 50%;
     height: auto;
@@ -111,11 +97,12 @@ footer a {
 main {
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-areas:
         "h11 h11 "
-        "gen arti1"
-        "arti2 eid";
+        "div1 arti1"
+        "arti2 div2";
 }
 
 h1 {
@@ -138,20 +125,39 @@ h2 {
     }
 }
 
+#genikoiIMG {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Προαιρετικά, για να κεντράρετε την εικόνα */
+}
+
+#eidikoiIMG {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Προαιρετικά, για να κεντράρετε την εικόνα */
+}
+
 #arti1 {
     grid-area: arti1;
     margin: 20px;
     padding: 20px;
     text-align: justify;
-    background-color: white;
+    color: white;
+    background-color: #393e46;
+
 }
 
 #arti2 {
     grid-area: arti2;
     margin: 20px;
     padding: 20px;
-    width: 100%;
-    background-color: white;
+    color: white;
+    background-color: #393e46;
+
 }
 
 main ul {
@@ -160,4 +166,18 @@ main ul {
 
 main ul li {
     padding: 3px;
+}
+
+#div1 {
+    grid-area: div1;
+    margin: 20px;
+    overflow: hidden;
+    /* Για να μην εμφανίζονται τα μέρη της εικόνας που ξεπερνούν τα όρια του div */
+}
+
+#div2 {
+    grid-area: div2;
+    margin: 20px;
+    overflow: hidden;
+    /* Για να μην εμφανίζονται τα μέρη της εικόνας που ξεπερνούν τα όρια του div */
 }
