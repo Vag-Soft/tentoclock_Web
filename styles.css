@@ -70,30 +70,30 @@ main {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "sect1 sect2"
         "arti arti"
         "metr metr";
 
 }
 
-main > *{
+main>* {
     border: 4px solid black;
 }
 
-.test1{
+.test1 {
     grid-area: sect1;
 }
 
-.test2{
+.test2 {
     grid-area: sect2;
 }
 
-article{
+article {
     grid-area: arti;
 }
 
-.metrites{
+.metrites {
     grid-area: metr;
     display: flex;
     justify-content: space-around;

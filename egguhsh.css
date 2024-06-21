@@ -5,7 +5,13 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    background-color: #E0E0E0;
 }
 
 
@@ -49,7 +55,7 @@ input[type="text"] {
 }
 
 .contact-button {
-    background-color: #ff9800;
+    background-color: #F9B60A;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -79,12 +85,25 @@ footer a {
     margin: 0 10px;
 }
 
-.fullWidthPhotos{
+.fullWidthPhotos {
     width: 100%;
     height: auto;
 }
 
-.halfWidthPhotos{
+#genikoiIMG {
+    grid-area: gen;
+    margin: 20px;
+    background-color: white;
+}
+
+#eidikoiIMG {
+    grid-area: eid;
+    margin: 20px;
+    background-color: white;
+    width: 95%;
+}
+
+.halfWidthPhotos {
     width: 50%;
     height: auto;
 }
@@ -93,14 +112,52 @@ main {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "h11 h11 "
-        "arti arti"
-        "metr metr";
-
+        "gen arti1"
+        "arti2 eid";
 }
 
-h1{
+h1 {
     grid-area: h11;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
+h2 {
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#arti1 {
+    grid-area: arti1;
+    margin: 20px;
+    padding: 20px;
+    text-align: justify;
+    background-color: white;
+}
+
+#arti2 {
+    grid-area: arti2;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+}
+
+main ul {
+    padding: 3px 20px;
+}
+
+main ul li {
+    padding: 3px;
+}
