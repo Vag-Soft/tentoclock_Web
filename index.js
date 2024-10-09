@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 */
 
-const firebaseConfig = process.env.FIREBASE_CONFIG;
+const firebaseConfig = Netlify.env.get("FIREBASE_CONFIG");
 
 const app = firebase.initializeApp(firebaseConfig);
 
@@ -18,7 +18,7 @@ const app = firebase.initializeApp(firebaseConfig);
 var database = app.database();
 
 function send_request() {
-    alert(process.env.TEST);
+    alert(Netlify.env.get("TEST"));
     var address = document.getElementById("address").value
     var doorbell = document.getElementById("doorbell").value
     var email = document.getElementById("email").value
