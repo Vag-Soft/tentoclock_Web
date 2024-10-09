@@ -8,30 +8,32 @@ const firebaseConfig = {
     appId: "1:979571765348:web:f0f62f54cdaeba211fef71"
 };
 
+// Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the database service
 var database = app.database();
 
 function send_request() {
-    // Get form data
-    var address = document.getElementById("address").value
-    var doorbell = document.getElementById("doorbell").value
-    var email = document.getElementById("email").value
-    var firstname = document.getElementById("firstname").value
-    var floor = document.getElementById("floor").value
-    var lastname = document.getElementById("lastname").value
-    var phone = document.getElementById("phone").value
-    var postcode = document.getElementById("postcode").value
-    var regionArea = document.getElementById("regionArea").value
-    
-    // Check if all fields are filled
-    if(address == "" || doorbell == "" || email == "" || firstname == "" || floor == "" || lastname == "" || phone == "" || postcode == "" || regionArea == ""){
+    // Check if the form is valid
+    var form = document.getElementById("form");
+    if (!form.checkValidity()) {
         return;
     }
 
+    // Get form data
+    var address = document.getElementById("address").value;
+    var doorbell = document.getElementById("doorbell").value;
+    var email = document.getElementById("email").value;
+    var firstname = document.getElementById("firstname").value;
+    var floor = document.getElementById("floor").value;
+    var lastname = document.getElementById("lastname").value;
+    var phone = document.getElementById("phone").value;
+    var postcode = document.getElementById("postcode").value;
+    var regionArea = document.getElementById("regionArea").value;
+
     // Get a key for a new customer
-    var newPostKey = firebase.database().ref().child('customers').push().key;
+    var newPostKey = database.ref().child('customers').push().key;
 
     // Write the new customer's data simultaneously in the customerCards list and the customers list
     database.ref('customerCards/' + newPostKey).set({
@@ -58,6 +60,4 @@ function send_request() {
 
     
     //window.location.replace = "egguhsh.html";
-    //check mail somehow
-    //db stops working randomly
 }
