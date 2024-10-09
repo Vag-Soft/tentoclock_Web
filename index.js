@@ -1,3 +1,4 @@
+/*
 const firebaseConfig = {
     apiKey: "AIzaSyBy7h8RIf1eWUPcqqt0Z5D6s-KY9FPltqI",
     authDomain: "tentoclock-ce1b1.firebaseapp.com",
@@ -7,6 +8,9 @@ const firebaseConfig = {
     messagingSenderId: "979571765348",
     appId: "1:979571765348:web:f0f62f54cdaeba211fef71"
 };
+*/
+
+const firebaseConfig = process.env.FIREBASE_CONFIG;
 
 const app = firebase.initializeApp(firebaseConfig);
 
@@ -14,6 +18,7 @@ const app = firebase.initializeApp(firebaseConfig);
 var database = app.database();
 
 function send_request() {
+    alert(process.env.TEST);
     var address = document.getElementById("address").value
     var doorbell = document.getElementById("doorbell").value
     var email = document.getElementById("email").value
@@ -52,5 +57,6 @@ function send_request() {
 
     
     //window.location.replace = "egguhsh.html";
+    //check mail somehow
 
 }
